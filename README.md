@@ -1,28 +1,28 @@
-# Bacterial Genome Assembler (BGA) - C1
+# Bacterial Genome Assembler (BGA)
 
-This pipeline is designed by Team C Group 1 to take Illumina paired-end reads as input and produce contiguous genome assemblies for the same along with assembly quality metrics. As for intermediate steps, the pipeline performs trimming and quality filtering to improve the quality of reads used by downstream genome assemblers. It has two assemblers built into it, Unicycler(slow) and Megahit(fast) to cater to the requirements of the user. 
+This pipeline is designed to take Illumina paired-end reads as input and produce contiguous genome assemblies for the same along with assembly quality metrics. As for intermediate steps, the pipeline performs trimming and quality filtering to improve the quality of reads used by downstream genome assemblers. It has two assemblers built into it, Unicycler(slow) and Megahit(fast) to cater to the requirements of the user. 
 
 The pipeline takes two required arguments: (i) an input reads directory and (ii) an output directory for storing final assembly files. It also provides an option to give a quast output directory in case the user would like assembly quality metrics. As for other arguments, the user can choose a fast mode (enabling Megahit) and a verbose mode.
 
 ## Installation
 
-This pipeline is a bash script that uses a Conda/Mamba environment with the appropriate packages and dependecies. We recommend using Mamba over Conda due to its overall better performance in package installation and dependency resolution. You can find the Mamba installation guide here - [Mamba Docs](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html#mamba-install).
+This pipeline is a bash script that uses a Conda/Mamba environment with the appropriate packages and dependencies. We recommend using Mamba over Conda due to its overall better performance in package installation and dependency resolution. You can find the Mamba installation guide here - [Mamba Docs](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html#mamba-install).
 
-Next, we recommend you to clone this repository into your local system using either the https option or ssh. For reference, here is how to do it using the https option.
+Next, we recommend you clone this repository into your local system using either the https option or ssh. For reference, here is how to do it using the https option.
 ```
-git clone https://github.gatech.edu/comgenomics2024/C1.git
+git clone https://github.com/hrishikeshp0304/Bacterial-Genome-Assembler.git
 ```
 
 Now, that you have this repo cloned and available as a directory in your system, go ahead and create and activate a mamba environment from the yml files provided in the *setup* directory.
 
 ```
 ## FOR LINUX USERS ##
-cd C1/
+cd Bacterial-Genome-Assembler/
 mamba env create -f setup/BGA_linux.yml -n your_env_name
 source activate your_env_name
 
 ## FOR MAC USERS ##
-cd C1/
+cd Bacterial-Genome-Assembler/
 mamba env create -f setup/BGA_OS.yml -n your_env_name
 source activate your_env_name
 ```
@@ -42,14 +42,14 @@ Your paired-end reads, i.e. forward and reverse reads for all your genomes shoul
 See ``example_input/`` as a reference below.
 
 ```
-C1/
-  example_input/
-     SRR20966265_R1.fastq.gz
-     SRR20966265_R2.fastq.gz
+Bacterial-Genome-Assembler/
+      example_input/
+         SRR20966265_R1.fastq.gz
+         SRR20966265_R2.fastq.gz
 ```
 
 ### Running the script
-In order to see the usage of the script and all required and optional arguments, you can print the help message by typing the following inside the ``C1/`` directory
+In order to see the usage of the script and all required and optional arguments, you can print the help message by typing the following inside the ``Bacterial-Genome-Assembler/`` directory
 ```
 ./pipeline.sh -h
 ```
